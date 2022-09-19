@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guest Book</title>
+    <link rel="stylesheet" href="app/css/style.css">
+    <script src="app/js/table.js"></script>
+    <script src="app/js/submitForm.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.12.1/dataRender/datetime.js"></script>
+</head>
+<body>
+<div class="text-center m-5">
+    <h1 class="colorOne">Welcome To Guest Book</h1>
+    <p>Please Leave a Comment</p>
+
+    <div class="container">
+        <form name="guestForm" id="guestForm" class="guestForm" ng-submit="insertData()">
+            <div class="formFields">
+                <input type="hidden" name="captchaResponse" id="captchaResponse">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="text" class="form-control form-input" id="name" ng-model="insert.name" required
+                               placeholder="Name">
+                        <div class="invalid-feedback">
+                            <p>Please enter your name.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" class="form-control form-input" ng-model="insert.email" id="email" required
+                               placeholder="Email">
+                        <div class="invalid-feedback">
+                            <p>Please enter your email.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="website"></label>
+                        <input type="text" class="form-control" ng-model="insert.website" id="website"
+                               placeholder="Link To Website">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                    <textarea type="text" rows="3" class="form-control " ng-model="insert.comment" required id="comment"
+                              placeholder="Leave a Comment"></textarea>
+                        <div class="invalid-feedback">
+                            <p>Please enter your comment.</p>
+                        </div>
+                    </div>
+                    <div id="recaptcha" class="form-group mt-2">
+                    </div>
+                </div>
+                <button type="submit" id="submit-button" name="insert" class="btn btn-primary m-4" value="Insert">Leave
+                    a Comment
+                </button>
+            </div>
+            <div id="alert" class="text-center"></div>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <table id="jsTable" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Website</th>
+            <th>Comment</th>
+            <th>Date Posted</th>
+        </tr>
+        </thead>
+
+        <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Website</th>
+            <th>Comment</th>
+            <th>Date Posted</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+</body>
+</html>

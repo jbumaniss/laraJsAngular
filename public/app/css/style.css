@@ -1,0 +1,24 @@
+.form-select{
+    background-position-x: right;
+    appearance: auto;
+}
+
+::placeholder{
+    font-size:1rem;
+}
+
+.has-error{
+    border: 1px solid red;
+}
+
+.no-error{
+    border: 1px solid green;
+}
+
+.error{
+    color:red;
+}
+
+.success {
+    color: green;
+}
