@@ -6,13 +6,17 @@ app.controller('MainAppController', function ($scope, $http) {
 });
 
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise(function ($injector, $location) {
+
+$urlRouterProvider.otherwise(function ($injector, $location) {
+
         let $state = $injector.get('$state');
         $state.go('/');
         return true;
     });
+
+
 
     $stateProvider.state('/', {
         url: '/',
