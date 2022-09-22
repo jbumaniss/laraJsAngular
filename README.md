@@ -1,62 +1,92 @@
 
 
-# PHP/Laravel/AngularJs/MySql created Guest Book app.
+# News App for MIDIS
 
-### Application for leaving guest book comments, 
+## Used PHP/PHP Extensions For Laravel and etc/Laravel/MySql
+
+### Application Guest Book app for leaving comments.
 ### records to database name, email, website, comment, ipaddress browser of user. Additional added google v3 captcha.
-### online host: www.larajsangular.win
-## This app is only for demonstration purposes only!
 
+### online host: www.larajsangular.win
+
+## This app is only for demonstration purposes only!
 
 ---
 
+## SPA
 ![Screenshot](larajsangular.png)
 
 ---
 
+# Requirements:
 
+### Git
+### Code Editor PHPSTORM or any other
+### Mysql or any other database for information storing
+### PHP
+### PHP Extensions For Laravel and etc
 
+---
 
 # How To Set up:
 
-
-## Requirements:
-
-### Mysql or any other database for information storing.
-### PHP installed on your machine
-
-### 1. Clone or download to your chosen directory
-
-### 2. Open with your chosen editor.
-
-### 3. First you need  to rename .env.example file to .env.
-
-### 4. Next fill the .env file in core folder with your:
-#### MySql(or any other db, then change driver in .env from mysql to sqlite etc..)
-
-
-### 5. Set in .env file ip address/databases name, which will be used/username/password if exists.
-
 ## Execute commands specified in terminal successfully:
 
-### 6. Migrate database migrations to fill your database with all the necessary tables and columns:
+### 1. Clone or download with Git to your chosen directory
+
+### 2. In your chosen directory open terminal
+#### Terminal should be open in chosen directory root!
+
+### 3. Open chosen directory with your chosen editor.
+
+### 4. Rename .env.example file from your chosen directory root to .env in same directory.
+
+### 5. Next fill the renamed .env file from your core directory with your credentials:
+#### DB_HOST=your_mysql_ip_address
+#### DB_DATABASE=your_databases_name
+#### DB_USERNAME=your_mysql_database_username
+#### DB_PASSWORD=your_mysql_database_password if is set if not leave empty
+
+### 6. Run composer to install required packages
 
 ```
+composer install
+```
 
+#### if a command failed because of requirements try this command instead
+
+```
+composer install --ignore-platform-reqs
+```
+
+### 7. Generate app key
+
+```
+php artisan key:generate
+```
+
+### 8. Migrate database migrations to fill your database with all the necessary tables and columns:
+
+```
 php artisan migrate
-
 ```
 
 
-### 7. Run the App command:
+### 9. Run the App command:
 
 ````
-
-php artisan serve
-
+php artisan serv
 ````
 
+### 11. Open your browser and navigate to http://127.0.0.1:8000:
+#### or if in your terminal is written different address navigate to it
+#### or for shortcut press ctrl and left mouse button in your terminal on your generated address should open browser with served page
+
+![Screenshot](phpartisanserv.png)
+
+### 12. Visit the page and leave a comment.
 
 ## Enjoy!
 
 ---
+
